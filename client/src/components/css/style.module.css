@@ -1,0 +1,19 @@
+.backGround{
+    background-image: url("MW2\ wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+    width: 100%;
+    
+}
+
+.greenFont{
+    color: #8fc03f;
+}
+
+.loadouts{
+    color:#8fc03f;
+    align-items: center;
+    margin: 10% 20% 10% 25% ;
+}
