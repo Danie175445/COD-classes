@@ -36,6 +36,7 @@ const HomePage = ()=> {
                     </tr>
                 </table>
             </div>
+            <button>Add Class</button>
         </div>
     )
 }
