@@ -1,12 +1,29 @@
 import style from '../components/css/style.module.css'
+import {useState,useEffect} from "react"  // do i need to import React in front of the curly brackets?
+import axios from "axios"
+import {Link}  from "react-router-dom"
+
 
 const HomePage = ()=> {
+    const [classes,setClasses] = useState([])
+
+    useEffect(()=>{
+        axios.get('http://localhost:8000/api/class')
+        .then(res =>{
+            console.log(res)
+            console.log(res.data)
+            setClasses(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    },[])
 
 
     return(
         <div className={style.backGround}>
-            <div className={style.greenFont}>
-                <h1>Call Of Duty </h1>
+            <div className={style.navbar}>
+                <h1 className={style.title}>Call Of Duty </h1>
             </div>
             <div>
                 <table className={style.loadouts}>
@@ -22,21 +39,25 @@ const HomePage = ()=> {
                         <th>Optic</th>
                         <th>Lazer</th>
                     </tr>
-                    <tr>
-                        <td>m4</td>
-                        <td>echoline gs-x</td>
-                        <td>razer comp</td>
-                        <td>vxpinaple vs rip</td>
-                        <td>100 blk overpressured</td>
-                        <td>60 round mag</td>
-                        <td>d39 grip</td>
-                        <td>trx-56 stock</td>
-                        <td>sz mw11</td>
-                        <td>1trd</td>
-                    </tr>
+                    {classes.map((oneClass,index)=>{
+                        return(
+                            <tr key={index}>
+                                <td>{oneClass.name}</td>
+                                <td>{oneClass.barrel}</td>
+                                <td>{oneClass.muzel}</td>
+                                <td>{oneClass.underBarrel}</td>
+                                <td>{oneClass.ammunation}</td>
+                                <td>{oneClass.magazine}</td>
+                                <td>{oneClass.rearGrip}</td>
+                                <td>{oneClass.stock}</td>
+                                <td>{oneClass.optic}</td>
+                                <td>{oneClass.lazer}</td>
+                            </tr>
+                        )
+                    })}
                 </table>
             </div>
-            <button>Add Class</button>
+            <Link to={'/create'} className={style.linkButton}>add a Wepon Class </Link>
         </div>
     )
 }

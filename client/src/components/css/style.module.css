@@ -5,7 +5,7 @@
     background-position: center;
     height: 800px;
     width: 100%;
-    
+    padding-top: -30px;
 }
 
 .greenFont{
@@ -13,7 +13,25 @@
 }
 
 .loadouts{
+    background-color: rgba(143, 192, 63, 0.5); /* Adjust the alpha value (0.5 in this example) for transparency */
     color:#8fc03f;
     align-items: center;
     margin: 10% 20% 10% 25% ;
+
+}
+
+.navbar{
+    color:#8fc03f;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.title {
+    margin-top: 0px;
+}
+
+.linkButton{
+    color: #8fc03f;
+    background-color: black;
+    text-decoration: none;
 }
