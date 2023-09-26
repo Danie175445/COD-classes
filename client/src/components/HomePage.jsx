@@ -19,6 +19,18 @@ const HomePage = ()=> {
         })
     },[])
 
+    const deleteHandler =(_id) =>{
+        axios.delete(`http://localhost:8000/api/class/${_id}`)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    }
+    // const removefromdom = (classid) =>{
+    //     setClasses(classes.filter(class=>class._id))
+    // }
 
     return(
         <div className={style.backGround}>
@@ -38,6 +50,7 @@ const HomePage = ()=> {
                         <th>Stock</th>
                         <th>Optic</th>
                         <th>Lazer</th>
+                        <th>Actions</th>
                     </tr>
                     {classes.map((oneClass,index)=>{
                         return(
@@ -52,12 +65,13 @@ const HomePage = ()=> {
                                 <td>{oneClass.stock}</td>
                                 <td>{oneClass.optic}</td>
                                 <td>{oneClass.lazer}</td>
+                                <td>Update || <button onClick={(e)=>deleteHandler(oneClass._id)}>Delete</button></td>
                             </tr>
                         )
                     })}
                 </table>
             </div>
-            <Link to={'/create'} className={style.linkButton}>add a Wepon Class </Link>
+            <Link to={'/create'} className={style.linkButton}>Add a Wepon Class </Link>
         </div>
     )
 }

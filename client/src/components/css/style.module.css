@@ -16,7 +16,7 @@
     background-color: rgba(143, 192, 63, 0.5); /* Adjust the alpha value (0.5 in this example) for transparency */
     color:#8fc03f;
     align-items: center;
-    margin: 10% 20% 10% 25% ;
+    margin: 5% 20% 10% 25% ;
 
 }
 
@@ -34,4 +34,23 @@
     color: #8fc03f;
     background-color: black;
     text-decoration: none;
+}
+
+.validations{
+    color: red;
+    font-weight: bold;
+}
+
+.createForm{
+    margin: 5% 10% 10% 40%;
+}
+
+.formDiv{
+    display: flex;
+    align-items: center;
+}
+
+.formInputs{
+    display: flex;
+    flex-wrap: wrap ;
 }

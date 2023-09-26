@@ -7,15 +7,15 @@ const Classschema = new mongoose.Schema({
     },
     barrel:{
         type:String,
-        required:true
+        required:[true,"Barrel is required"]
     },
     muzel:{
         type:String,
-        required:true
+        required:[true,"Muzel is required"]
     },
     underBarrel:{
         type:String,
-        required:true
+        required:[true,"Under Barrel is required"]
     },
     ammunation:{
         type:String,
@@ -23,7 +23,7 @@ const Classschema = new mongoose.Schema({
     },
     magazine:{
         type:String,
-        required:true
+        required:[true,"Magazine is required"]
     },
     rearGrip:{
         type:String,
@@ -31,7 +31,7 @@ const Classschema = new mongoose.Schema({
     },
     stock:{
         type:String,
-        required:true
+        required:[true,"Stock is required"]
     },
     optic:{
         type:String,
@@ -39,7 +39,7 @@ const Classschema = new mongoose.Schema({
     },
     lazer:{
         type:String,
-        required:true
+        required:[true,"Lazer is required"]
     }
 },{timestamps:true})
 
