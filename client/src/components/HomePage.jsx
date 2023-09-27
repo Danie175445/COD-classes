@@ -26,11 +26,12 @@ const HomePage = ()=> {
             })
             .catch(err =>{
                 console.log(err)
+                removefromdom(_id)
             })
     }
-    // const removefromdom = (classid) =>{
-    //     setClasses(classes.filter(class=>class._id))
-    // }
+    const removefromdom = (classid) =>{
+        setClasses(classes.filter(oneClass=>oneClass._id !== classid))
+    }
 
     return(
         <div className={style.backGround}>
