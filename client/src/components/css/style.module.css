@@ -12,11 +12,20 @@
     color: #8fc03f;
 }
 
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .loadouts{
+    /* display: block; */
     background-color: rgba(143, 192, 63, 0.5); /* Adjust the alpha value (0.5 in this example) for transparency */
     color:#8fc03f;
     align-items: center;
-    margin: 5% 20% 10% 25% ;
+    justify-content: center;
+    margin: 5%
 
 }
 

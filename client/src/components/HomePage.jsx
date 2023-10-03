@@ -19,14 +19,14 @@ const HomePage = ()=> {
         })
     },[])
 
-    const deleteHandler =(_id) =>{
-        axios.delete(`http://localhost:8000/api/class/${_id}`)
+    const deleteHandler =(classid) =>{
+        axios.delete(`http://localhost:8000/api/class/${classid}`)
             .then(res => {
                 console.log(res)
+                removefromdom(classid) 
             })
             .catch(err =>{
                 console.log(err)
-                removefromdom(_id)
             })
     }
     const removefromdom = (classid) =>{
@@ -38,7 +38,7 @@ const HomePage = ()=> {
             <div className={style.navbar}>
                 <h1 className={style.title}>Call Of Duty </h1>
             </div>
-            <div>
+            <div className={style.flex}>
                 <table className={style.loadouts}>
                     <tr>
                         <th>Gun (9 mods)</th>
@@ -66,13 +66,13 @@ const HomePage = ()=> {
                                 <td>{oneClass.stock}</td>
                                 <td>{oneClass.optic}</td>
                                 <td>{oneClass.lazer}</td>
-                                <td>Update || <button onClick={(e)=>deleteHandler(oneClass._id)}>Delete</button></td>
+                                <td><Link to={'/edit'}>Update</Link> || <button onClick={(e)=>deleteHandler(oneClass._id)}>Delete</button></td>
                             </tr>
                         )
                     })}
                 </table>
-            </div>
             <Link to={'/create'} className={style.linkButton}>Add a Wepon Class </Link>
+            </div>
         </div>
     )
 }

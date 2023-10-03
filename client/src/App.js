@@ -1,7 +1,7 @@
 import { BrowserRouter,Route, Routes } from "react-router-dom";
-import PersonComponent from "./components/PersonComponent";
 import HomePage from "./components/HomePage";
 import CreateClass from "./components/CreateClass";
+import EditClass from "./components/EditClass";
 
 function App() {
   return (
@@ -10,9 +10,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path='/create' element={<CreateClass/>} />
+          <Route path='/edit' element={<EditClass/>} />
         </Routes>
       </BrowserRouter>
-      {/* <PersonComponent/> */}
     </div>
   );
 }
