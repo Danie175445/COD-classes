@@ -43,8 +43,10 @@ const CreateClass = () =>{
         })
     }
     return(
-        <div>
-            <h1>Add your gun class</h1>
+        <div className={style.backGround}>
+            <div className={style.navbar}>
+            <h1 className={style.title}>Add your gun class</h1>
+            </div>
             <div  className={style.createForm}>
                 <form onSubmit={submitHandler}>
                     <div className={style.formInputs}>
@@ -70,7 +72,7 @@ const CreateClass = () =>{
                             : null}
                         </div>
                         <div className={style.formDiv}>
-                            <label htmlFor="underBarel">under barrel</label>
+                            <label htmlFor="underBarrel">under barrel</label>
                             <input type="text" onChange={(e) => setUnderBarrel(e.target.value)}/>
                             {error.underBarrel?
                                 <p className={style.validations}>{error.underBarrel.message}</p>
@@ -83,6 +85,8 @@ const CreateClass = () =>{
                                 <p className={style.validations}>{error.ammunation.message}</p>
                             }
                         </div>
+                    </div>
+                    <div className={style.formInputs}>
                         <div className={style.formDiv}>
                             <label htmlFor="magazine">magazine</label>
                             <input type="text" onChange={(e) => setMagazine(e.target.value)}/>
@@ -114,7 +118,7 @@ const CreateClass = () =>{
                                 <p className={style.validations}>{error.lazer.message}</p>}
                         </div>
                     </div>
-                    <input type="submit" value="submit" />
+                    <input type="submit" value="submit" className={style.linkButton}/>
                     <Link to={"/"} className={style.linkButton}>Back Home</Link>
                 </form>
             </div>

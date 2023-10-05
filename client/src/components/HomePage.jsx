@@ -66,7 +66,7 @@ const HomePage = ()=> {
                                 <td>{oneClass.stock}</td>
                                 <td>{oneClass.optic}</td>
                                 <td>{oneClass.lazer}</td>
-                                <td><Link to={'/edit'}>Update</Link> || <button onClick={(e)=>deleteHandler(oneClass._id)}>Delete</button></td>
+                                <td><Link to={`/edit/${oneClass._id}`}>Update</Link> || <button onClick={(e)=>deleteHandler(oneClass._id)}>Delete</button></td>
                             </tr>
                         )
                     })}
