@@ -48,7 +48,7 @@ const CreateClass = () =>{
             <h1 className={style.title}>Add your gun class</h1>
             </div>
             <div  className={style.createForm}>
-                <form onSubmit={submitHandler}>
+                <form onSubmit={submitHandler} className={style.twoColumnForm}>
                     <div className={style.formInputs}>
                         <div className={style.formDiv}>
                             <label htmlFor="name">Name:</label>
@@ -86,6 +86,7 @@ const CreateClass = () =>{
                             }
                         </div>
                     </div>
+
                     <div className={style.formInputs}>
                         <div className={style.formDiv}>
                             <label htmlFor="magazine">magazine</label>
@@ -114,8 +115,9 @@ const CreateClass = () =>{
                         <div className={style.formDiv}>
                             <label htmlFor="lazer">lazer</label>
                             <input type="text" onChange={(e) => setLazer(e.target.value)}/>
-                            {error.lazer &&
-                                <p className={style.validations}>{error.lazer.message}</p>}
+                            {error.lazer && (
+                                <p className={style.validations}>{error.lazer.message}</p>
+                                )}
                         </div>
                     </div>
                     <input type="submit" value="submit" className={style.linkButton}/>
