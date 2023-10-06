@@ -66,48 +66,53 @@ const EditClass = (props) =>{
                 <h1 className={style.title}>Edit Class</h1>
             </div>
             <div className={style.createForm}>
-                <form onSubmit={submitHandler}>
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                <form onSubmit={submitHandler} className={style.twoColumnForm}>
+                    <div className={style.formInputs}>
+                        <div className={style.formDiv}>
+                            <label htmlFor="name">Name:</label>
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="barrel">Barrel:</label>
+                            <input type="text" value={barrel} onChange={(e)=> setBarrel(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="muzel">muzel:</label>
+                            <input type="text" value={muzel} onChange={(e)=> setMuzel(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="underBarrel">Under Barrel:</label>
+                            <input type="text" value={underBarrel} onChange={(e)=> setUnderBarrel(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="ammunation">Amunation:</label>
+                            <input type="text" value={ammunation} onChange={(e)=> setAmunation(e.target.value)}/>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="barrel">Barrel:</label>
-                        <input type="text" value={barrel} onChange={(e)=> setBarrel(e.target.value)}/>
+
+                    <div className={style.formInputs}>
+                        <div className={style.formDiv}>
+                            <label htmlFor="magazine">Magazine:</label>
+                            <input type="text" value={magazine} onChange={(e)=> setMagazine(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="rearGrip">Rear Grip:</label>
+                            <input type="text" value={rearGrip} onChange={(e)=> setRearGrip(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="stock">stock:</label>
+                            <input type="text" value={stock} onChange={(e)=> setStock(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="optic">optic:</label>
+                            <input type="text" value={optic} onChange={(e)=> setOptic(e.target.value)}/>
+                        </div>
+                        <div className={style.formDiv}>
+                            <label htmlFor="lazer">lazer:</label>
+                            <input type="text" value={lazer} onChange={(e)=> setLazer(e.target.value)}/>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="muzel">muzel:</label>
-                        <input type="text" value={muzel} onChange={(e)=> setMuzel(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="underBarrel">Under Barrel:</label>
-                        <input type="text" value={underBarrel} onChange={(e)=> setUnderBarrel(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="ammunation">Amunation:</label>
-                        <input type="text" value={ammunation} onChange={(e)=> setAmunation(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="magazine">Magazine:</label>
-                        <input type="text" value={magazine} onChange={(e)=> setMagazine(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="rearGrip">Rear Grip:</label>
-                        <input type="text" value={rearGrip} onChange={(e)=> setRearGrip(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="stock">stock:</label>
-                        <input type="text" value={stock} onChange={(e)=> setStock(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="optic">optic:</label>
-                        <input type="text" value={optic} onChange={(e)=> setOptic(e.target.value)}/>
-                    </div>
-                    <div>
-                        <label htmlFor="lazer">lazer:</label>
-                        <input type="text" value={lazer} onChange={(e)=> setLazer(e.target.value)}/>
-                    </div>
-                <input type="submit"  value="submit"/>
+                <input type="submit"  value="submit" className={style.linkButton}/>
                 <Link to={"/"} className={style.linkButton}>Back Home</Link>
                 </form>
             </div>
