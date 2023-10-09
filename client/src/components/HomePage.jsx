@@ -2,10 +2,12 @@ import style from '../components/css/style.module.css'
 import {useState,useEffect} from "react"  // do i need to import React in front of the curly brackets?
 import axios from "axios"
 import {Link}  from "react-router-dom"
+import CreateClass from "../components/CreateClassModal"
 
 
 const HomePage = ()=> {
     const [classes,setClasses] = useState([])
+    const [openModal,setOpenModal] = useState(false)
 
     useEffect(()=>{
         axios.get('http://localhost:8000/api/class')
@@ -17,7 +19,7 @@ const HomePage = ()=> {
         .catch(err => {
             console.log(err)
         })
-    },[])
+    },[openModal])
 
     const deleteHandler =(classid) =>{
         axios.delete(`http://localhost:8000/api/class/${classid}`)
@@ -71,7 +73,9 @@ const HomePage = ()=> {
                         )
                     })}
                 </table>
-            <Link to={'/create'} className={style.linkButton}>Add a Wepon Class </Link>
+                <button className={style.linkButton} onClick={()=> setOpenModal(true)}>Add a Wepon class</button>
+                {openModal && <CreateClass setOpenModal={setOpenModal}/>}
+                {/* <Link to={'/create'} className={style.linkButton}>Add a Wepon Class </Link> */}
             </div>
         </div>
     )
