@@ -19,7 +19,6 @@
 }
 
 .loadouts{
-    /* display: block; */
     background-color: rgba(19, 31, 1, 0.5); /* Adjust the alpha value (0.5 in this example) for transparency */
     color:#8fc03f;
     align-items: center;
@@ -41,7 +40,6 @@
 .linkButton{
     color: #8fc03f;
     height: 25px;
-    /* width: 17%;   work on this */
     background-color: black;
     text-decoration: none;
     border: none;
@@ -77,12 +75,11 @@
 
 .twoColumnForm {
     display: flex;
-    justify-content: space-between; /* This will create two columns */
-    flex-wrap: wrap; /* Allows the columns to wrap on smaller screens */
+    justify-content: space-between; 
+    flex-wrap: wrap; 
 }
 
 .modalBackGround{
-    /* border: solid #8fc03f 2px; */
     position: fixed;
     background-color: rgba(200, 200, 200, 0.2);
     display: flex;

@@ -1,5 +1,5 @@
 import style from '../components/css/style.module.css'
-import {useState,useEffect} from "react"  // do i need to import React in front of the curly brackets?
+import {useState,useEffect} from "react"
 import axios from "axios"
 import {Link}  from "react-router-dom"
 import CreateClass from "../components/CreateClassModal"
@@ -43,7 +43,7 @@ const HomePage = ()=> {
             <div className={style.flex}>
                 <table className={style.loadouts}>
                     <tr>
-                        <th>Gun (9 mods)</th>
+                        <th>Gun Name</th>
                         <th>Barrel</th>
                         <th>Muzel</th>
                         <th>Underbarral</th>
@@ -75,7 +75,6 @@ const HomePage = ()=> {
                 </table>
                 <button className={style.linkButton} onClick={()=> setOpenModal(true)}>Add a Wepon class</button>
                 {openModal && <CreateClass setOpenModal={setOpenModal}/>}
-                {/* <Link to={'/create'} className={style.linkButton}>Add a Wepon Class </Link> */}
             </div>
         </div>
     )
